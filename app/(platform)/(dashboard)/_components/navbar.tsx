@@ -13,12 +13,13 @@ const Navbar = () => {
           <Logo />
         </div>
         <Button
+          variant="primary"
           size="sm"
           className="rounded-sm hidden md:block h-auto py-1.5 px-2"
         >
           Create
         </Button>
-        <Button className="rounded-sm block md:hidden">
+        <Button variant="primary" className="rounded-sm block md:hidden">
           <Plus className="size-4" />
         </Button>
       </div>
