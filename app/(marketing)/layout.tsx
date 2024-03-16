@@ -1,12 +1,13 @@
 import React, { ReactNode } from "react";
 import { Navbar } from "./_components/navbar";
+import { Footer } from "./_components/footer";
 
 const MaketingLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="h-full bg-slate-100">
       <Navbar />
       <main className="pt-40 bg-20 bg-slate-100">{children}</main>
-      {/* Footer */}
+      <Footer />
     </div>
   );
 };
