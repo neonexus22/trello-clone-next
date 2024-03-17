@@ -1,6 +1,5 @@
 import { deleteBoard } from "@/actions/delete-board";
-import { Button } from "@/components/ui/button";
-import { Trash } from "lucide-react";
+import { FormDelete } from "./form-delete";
 
 interface BoardProps {
   title: string;
@@ -12,9 +11,7 @@ const Board = ({ id, title }: BoardProps) => {
   return (
     <form action={delteBoardWithId} className="flex items-center gap-x-2">
       <p>Board title: {title}</p>
-      <Button type="submit" variant="destructive" size="sm">
-        <Trash className="size-4" />
-      </Button>
+      <FormDelete />
     </form>
   );
 };
