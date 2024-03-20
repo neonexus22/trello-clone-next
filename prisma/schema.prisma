@@ -15,8 +15,16 @@ datasource db {
 }
 
 model Board {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  orgId         String
+  title         String
+  imageId       String
+  imageThumbUrl String @db.String
+  imageFullUrl  String @db.String
+  imageUserName String @db.String
+  imageLinkHTML String @db.String
 
-  title String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 }
 
