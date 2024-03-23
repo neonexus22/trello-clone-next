@@ -1,10 +1,11 @@
 import Logo from "@/components/logo";
-import { Button } from "@/components/ui/button";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
-import { Plus } from "lucide-react";
 import React from "react";
 import MobileSidebar from "./mobile-sidebar";
+import { Plus } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 import { FormPopover } from "@/components/form/form-popover";
+import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   return (
@@ -15,18 +16,24 @@ export const Navbar = () => {
           <Logo />
         </div>
         <FormPopover align="start" side="bottom" sideOffset={18}>
-          <Button
-            variant="primary"
-            size="sm"
-            className="rounded-sm hidden md:block h-auto py-1.5 px-2"
+          <div
+            className={cn(
+              buttonVariants({ variant: "primary", size: "sm" }),
+              "rounded-sm hidden md:block h-auto py-1.5 px-2"
+            )}
           >
             Create
-          </Button>
+          </div>
         </FormPopover>
         <FormPopover>
-          <Button variant="primary" className="rounded-sm block md:hidden">
+          <div
+            className={cn(
+              buttonVariants({ variant: "primary" }),
+              "rounded-sm flex justify-center items-center md:hidden"
+            )}
+          >
             <Plus className="size-4" />
-          </Button>
+          </div>
         </FormPopover>
       </div>
       <div className="ml-auto flex items-center gap-x-2">
